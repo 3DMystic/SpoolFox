@@ -1,0 +1,60 @@
+/* Mobile-first CSS for SpoolFox */
+/* General styles */
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    width: 100%;
+    height: 4rem;
+}
+
+i {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* Menu styles */
+.menu {
+    margin-left: 1rem;
+}
+
+.nav-links {
+    display: none;
+}
+
+/* Logo */
+.logo img{
+    width: 10rem;
+}
+
+/* Search styles */
+.search {
+    margin-right: 1rem;
+}
+
+.search-input {
+    display: none;
+}
+
+#search-btn {
+    background-color: #507092;
+}
+
+/* Filter styles */
+.filter-options {
+    background-color: #507092;
+    height: 2rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

@@ -6,12 +6,45 @@
     <title>My Web App</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <h1>My Web App</h1>
-        <p>This is a simple web application.</p>
+    <header>
+        <!--Menu Display-->
+        <div class="menu">
+            <nav class="nav-menu">
+                <i class="fa fa-bars"></i>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--Logo Display-->
+        <div class="logo">
+            <img src="spoolFoxLogo.png" alt="Logo">
+        </div>
+        <!--Search Bar-->
+        <div class="search">
+            <input class="search-input" type="text" placeholder="Search...">
+            <button id="search-btn" type="submit"><i class="fa fa-search"></i></button> <!---search icon is white-->
+        </div>
+    </header>
+    <!--Filter Display-->
+    <div class="filter-options">
+        <div class="filter">
+            <label for="filter">Filter:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="category1">Category 1</option>
+                <option value="category2">Category 2</option>
+            </select>
+        </div>
     </div>
+    <!--Main-Content Spool Info Cards-->
+    <main class="main-content"></main>
     <script src="./script.js"></script>
 </body>
 </html>
