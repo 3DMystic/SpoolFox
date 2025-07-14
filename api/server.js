@@ -7,9 +7,7 @@ const filamentSpools = JSON.parse(fs.readFileSync('./filamentSpools.json', 'utf8
 const path = require('path');
 
 // Serve frontend from public/
-app.use(express.static(path.join(__dirname, '../public')));
-
-
+app.use(express.static('../public'));
 app.use(express.json());
 
 

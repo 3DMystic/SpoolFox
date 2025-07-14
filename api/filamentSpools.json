@@ -10,6 +10,7 @@
             "brand": "eSUN",
             "materialType": "PLA",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla"
         },
         {
@@ -23,6 +24,7 @@
             "materialType": "PLA",
             "spoolSize": 50,
             "reviews": 4.4,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amazon.com/SUNLU-High-Speed-Filament-1-75mm/dp/B0CR17C24Y?tag=bingshoppinga-20&linkCode=df0&hvadid=80539416694511&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=88148&hvtargid=pla-4584138886130396&psc=1&msclkid=df2dc63793f114b564faae5a1be5a7b9"
         },
         {
@@ -36,6 +38,7 @@
             "materialType": "PLA",
             "varient": "PLA+",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/pla-pro"
         },
         {
@@ -48,6 +51,7 @@
             "brand": "Protopasta",
             "materialType": "PLA",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla"
         },
         {
@@ -60,6 +64,7 @@
             "brand": "Anycubic",
             "materialType": "PLA",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/pla-filament"
         },
         {
@@ -73,6 +78,7 @@
             "materialType": "PLA",
             "varient": "Silk",
             "reviews": 4.8,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/pla-silk-s-series"
         },
         {
@@ -85,6 +91,7 @@
             "brand": "Hatchbox",
             "materialType": "PLA",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/pla-1-75mm"
         },
         {
@@ -98,6 +105,7 @@
             "materialType": "PLA",
             "varient": "PLA+",
             "reviews": 4.4,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amazon.com/PLA-Filament-SUNLU-Dimensional-Plus/dp/B08CVGTKC7?tag=bingshoppinga-20&linkCode=df0&hvadid=80195739343550&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=88148&hvtargid=pla-4583795271321493&th=1"
         },
         {
@@ -111,6 +119,7 @@
             "materialType": "PLA",
             "varient": "Silk",
             "reviews": 4.3,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amazon.com/Filament-SUNLU-1-75mm%EF%BC%8CSmooth-Surface%EF%BC%8CGreat-Printers%EF%BC%8CDimensional/dp/B0B6126XML?tag=bingshoppinga-20&linkCode=df0&hvadid=79989661084661&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=88148&hvtargid=pla-4583589125570045&psc=1"
         },
         {
@@ -124,6 +133,7 @@
             "materialType": "PLA",
             "varient": "Silk",
             "reviews": 4.6,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla-silk"
         },
         {
@@ -137,6 +147,7 @@
             "materialType": "PLA",
             "varient": "Silk",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla"
         },
         {
@@ -150,6 +161,7 @@
             "materialType": "PLA",
             "varient": "Silk Rainbow",
             "reviews": 4.5,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla-silk-rainbow"
         },
         {
@@ -163,6 +175,7 @@
             "materialType": "PLA",
             "varient": "Silk",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/pla-1-75mm?filter.p.m.my_fields.series=SILK"
         },
         {
@@ -176,6 +189,7 @@
             "materialType": "PLA",
             "varient": "Silk Rainbow",
             "reviews": 4.8,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/pla-silk-rainbow"
         }],
         "PETG": [
@@ -189,6 +203,7 @@
             "brand": "eSUN",
             "materialType": "PETG",
             "reviews": 4.8,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/petg"
         },
         {
@@ -201,6 +216,7 @@
             "brand": "AMOLEN",
             "materialType": "PETG",
             "reviews": 4.6,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/petg-basic"
         },
         {
@@ -214,6 +230,7 @@
             "materialType": "TPU",
             "varient": "Transparent",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/petg-transparent"
         },
         {
@@ -227,6 +244,7 @@
             "materialType": "TPU",
             "varient": "Rainbow Transparent",
             "reviews": 4.8,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/petg-transparent-rainbow"
         },
         {
@@ -240,6 +258,7 @@
             "materialType": "TPU",
             "varient": "Transparent",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/petg-transparent"
         },
         {
@@ -252,6 +271,7 @@
             "brand": "Hatchbox",
             "materialType": "PETG",
             "reviews": 4.6,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/petg-1-75mm"
         },
         {
@@ -265,6 +285,7 @@
             "materialType": "PETG",
             "varient": "High Speed Matte",
             "reviews": 4.6,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.sunlu.com/products/high-speed-matte-petg-3d-printer-filament-1kg"
         },
         {
@@ -277,6 +298,7 @@
             "brand": "Anycubic",
             "materialType": "PETG",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/petg-filament"
         }],
         "TPU": [
@@ -290,6 +312,7 @@
             "brand": "eSUN",
             "materialType": "TPU",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/collections/flexible-series"
         },
         {
@@ -302,6 +325,7 @@
             "brand": "AMOLEN",
             "materialType": "TPU",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/tpu-basic"
         },
         {
@@ -314,6 +338,7 @@
             "brand": "eSUN",
             "materialType": "TPU",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/collections/flexible-series"
         },
         {
@@ -327,6 +352,7 @@
             "materialType": "TPU",
             "varient": "Transparent",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/tpu-transparent-1-75mm-1kg-2-2lb"
         },
         {
@@ -340,6 +366,7 @@
             "materialType": "TPU",
             "varient": "Rainbow",
             "reviews": 4.7,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/tpu-rainbow"
         },
         {
@@ -352,6 +379,7 @@
             "brand": "Hatchbox",
             "materialType": "TPU",
             "reviews": 4.7,
+            "photo": "spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/tpu-1-75mm"
         },
         {
@@ -364,6 +392,7 @@
             "brand": "Sunlu",
             "materialType": "TPU",
             "reviews": 4.7,
+            "photo": "spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/tpu-1-75mm"
         },
         {
@@ -376,6 +405,7 @@
             "brand": "Anycubic",
             "materialType": "TPU",
             "reviews": 4.3,
+            "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/tpu-filament"
         }]
 }
