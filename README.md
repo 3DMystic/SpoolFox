@@ -1,8 +1,8 @@
 # SpoolFox
 To run this project as of right now you will need to go to your terminal:
-
+You will need to have NodeJS installed on your computer
 1. git clone https://github.com/3DMystic/SpoolFox.git
-cd your-repo-name
+
 2. npm install
 3. go to your package.json and change your "script" to look like this:
          "scripts": {
