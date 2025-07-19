@@ -34,7 +34,7 @@ async function createSpoolCards() {
     const spools = await fetchSpools();
     if (spools && spools.length > 0) {
         console.log(spools.photo)
-        mainContent.innerHTML = ''; // Clear existing content
+        mainContent.innerHTML = ''; // Clears existing content
         spools.forEach(spool => {
             const card = document.createElement('div');
             card.className = 'spool-card';
@@ -66,11 +66,10 @@ const searchBtn = document.getElementById('search-btn');
 
 searchBtn.addEventListener('click', () => {
     const logo = document.getElementById('logo-img');
-    const searchInput = document.querySelector(".search-input"); //needs work so that while search bar is showing, the logo won't be and vis vera
-    while (searchInput.classList.toggle('show') === true ) {
-        logo.classList.remove('show');
-    }
-})
+    const searchInput = document.querySelector(".search-input"); 
+    searchInput.classList.toggle('show');
+    logo.classList.toggle('show');
+});
 
 //Quick Filter for Mobile
 const materialBtn = document.getElementById('material-btn');
@@ -78,7 +77,34 @@ const materialBtn = document.getElementById('material-btn');
 materialBtn.addEventListener('click', () => {
     console.log('material clicked');
     const displayMaterialOptions = document.querySelector('.material-btn-options');
-    displayMaterialOptions.classList.toggle('show');
+    displayMaterialOptions.classList.toggle('show'); 
+
+    // to filter spools by material
+    const materialOptions = document.querySelectorAll('.quick-material-option');
+
+    if (displayMaterialOptions.classList.contains('show')) {
+        materialOptions.forEach(option => {
+            option.addEventListener('click', async (event) => {
+                const selectedMaterial = event.target.textContent;
+                const spools = await fetchSpools();
+                const filteredSpools = spools.filter(spool => spool.material === selectedMaterial);
+                mainContent.innerHTML = '';
+                filteredSpools.forEach(spool => {
+                    const card = document.createElement('div');
+                    card.className = 'spool-card';
+                    card.innerHTML = `
+                    <h3>${spool.name}</h3>
+                    <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
+                    <p>Color: ${spool.color}</p>
+                    <p>Material: ${spool.material}</p>
+                    <p>Weight: ${spool.weight}</p>
+                `;
+                mainContent.appendChild(card);
+                })
+            })
+        })
+    };
+
 });
 
 const brandBtn = document.getElementById('brand-btn');
@@ -87,6 +113,32 @@ brandBtn.addEventListener('click', () => {
     console.log('brand clicked');
     const displayBrandOptions = document.querySelector('.brand-btn-options');
     displayBrandOptions.classList.toggle('show');
+    
+    // to filter spools by brand
+    const brandOptions = document.querySelectorAll('.quick-brand-option');
+
+    if (displayBrandOptions.classList.contains('show')) {
+        brandOptions.forEach(option => {
+            option.addEventListener('click', async (event) => {
+                const selectedBrand = event.target.textContent;
+                const spools = await fetchSpools();
+                const filteredSpools = spools.filter(spool => spool.brand === selectedBrand);
+                mainContent.innerHTML = '';
+                filteredSpools.forEach(spool => {
+                    const card = document.createElement('div');
+                    card.className = 'spool-card';
+                    card.innerHTML = `
+                    <h3>${spool.name}</h3>
+                    <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
+                    <p>Color: ${spool.color}</p>
+                    <p>Material: ${spool.material}</p>
+                    <p>Weight: ${spool.weight}</p>
+                `;
+                mainContent.appendChild(card);
+                })
+            })
+        })
+    };
 });
 
 //hide dropdowns and search bar

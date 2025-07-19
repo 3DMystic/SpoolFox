@@ -19,6 +19,10 @@ i {
     font-size: 1.5rem;
 }
 
+p {
+    margin: 3px 0px;
+}
+
 /* Menu styles */
 .menu-container {
     margin-left: 1rem;
@@ -148,6 +152,7 @@ i {
 
 /*Spool Cards*/
 .spool-card {
+    text-align: center;
     margin: 0.5rem auto;
     background-color: #709ece;
     border-radius: 0.5rem;
