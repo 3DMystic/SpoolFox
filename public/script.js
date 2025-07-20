@@ -33,7 +33,6 @@ async function fetchSpools() {
 async function createSpoolCards() {
     const spools = await fetchSpools();
     if (spools && spools.length > 0) {
-        console.log(spools.photo)
         mainContent.innerHTML = ''; // Clears existing content
         spools.forEach(spool => {
             const card = document.createElement('div');
@@ -71,11 +70,43 @@ searchBtn.addEventListener('click', () => {
     logo.classList.toggle('show');
 });
 
+//search input validation and functionality
+const searchInput = document.querySelector('.search-input');
+
+searchInput.addEventListener('input', async (event) => {
+    const searchItem = event.target.value.toLowerCase();
+    const spools = await fetchSpools();
+    const filteredSpools = spools.filter(spool => 
+        spool.name.toLowerCase().includes(searchItem) ||
+        spool.color.toLowerCase().includes(searchItem) ||
+        spool.material.toLowerCase().includes(searchItem) ||
+        spool.brand.toLowerCase().includes(searchItem)
+    );
+    mainContent.innerHTML = '';
+    if (filteredSpools.length > 0) {
+        filteredSpools.forEach(spool => {
+            const card = document.createElement('div');
+            card.className = 'spool-card';
+            card.innerHTML = `
+                <h3>${spool.name}</h3>
+                <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
+                <p>Color: ${spool.color}</p>
+                <p>Material: ${spool.material}</p>
+                <p>Weight: ${spool.weight}</p>
+            `;
+            mainContent.appendChild(card);
+        })
+    } else {
+        mainContent.innerHTML = '<p>No results found</p>';
+    }
+});
+
+
+
 //Quick Filter for Mobile
 const materialBtn = document.getElementById('material-btn');
 
 materialBtn.addEventListener('click', () => {
-    console.log('material clicked');
     const displayMaterialOptions = document.querySelector('.material-btn-options');
     displayMaterialOptions.classList.toggle('show'); 
 
@@ -110,7 +141,6 @@ materialBtn.addEventListener('click', () => {
 const brandBtn = document.getElementById('brand-btn');
 
 brandBtn.addEventListener('click', () => {
-    console.log('brand clicked');
     const displayBrandOptions = document.querySelector('.brand-btn-options');
     displayBrandOptions.classList.toggle('show');
     

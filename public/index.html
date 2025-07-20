@@ -17,7 +17,7 @@
             <nav class="nav-menu">
                 <button id="menu-btn" type="button" title="menu-button"><i class="fa fa-bars" aria-hidden="true"></i></button>
                 <ul id="nav-links" class="hide">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="http://localhost:8080/">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -63,35 +63,35 @@
             </div>
         </div>
     </div>
+    <div class="desktopFilter-and-mainContent">
+        <!--Filter Options For Larger View Port Display-->
+        <div class="desktop-filter">
+            <form class="checkbox-filter">
+                <h2>Filter By:</h2> <!---Placeholer filters starts here-->
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="material" value="plastic"> Plastic</label>
+                    <label><input type="checkbox" name="material" value="metal"> Metal</label>
+                    <label><input type="checkbox" name="material" value="wood"> Wood</label>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="color" value="red"> Red</label>
+                    <label><input type="checkbox" name="color" value="blue"> Blue</label>
+                    <label><input type="checkbox" name="color" value="green"> Green</label>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="brand" value="brandA"> Brand A</label>
+                    <label><input type="checkbox" name="brand" value="brandB"> Brand B</label>
+                    <label><input type="checkbox" name="brand" value="brandC"> Brand C</label>
+                </div> <!---Placeholer filters ends here-->
+            </form>
+        </div>
 
-    <!--Filter Options For Larger View Port Display-->
-    <div class="desktop-filter">
-        <form class="checkbox-filter">
-            <h2>Filter By:</h2> <!---Placeholer filters starts here-->
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="material" value="plastic"> Plastic</label>
-                <label><input type="checkbox" name="material" value="metal"> Metal</label>
-                <label><input type="checkbox" name="material" value="wood"> Wood</label>
-            </div>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="color" value="red"> Red</label>
-                <label><input type="checkbox" name="color" value="blue"> Blue</label>
-                <label><input type="checkbox" name="color" value="green"> Green</label>
-            </div>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="brand" value="brandA"> Brand A</label>
-                <label><input type="checkbox" name="brand" value="brandB"> Brand B</label>
-                <label><input type="checkbox" name="brand" value="brandC"> Brand C</label>
-            </div> <!---Placeholer filters ends here-->
-        </form>
+        <!--Main-Content Spool Info Cards-->
+        <main id="main-content" class="main-content"></main>
     </div>
-
-    <!--Main-Content Spool Info Cards-->
-    <main id="main-content" class="main-content"></main>
-
     <!--Bottom Bar-->
     <div class="bottom-bar">
-        <div class="social-icons">
+        <div class="bottom-icons">
             <a href="#header"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
         </div>
     </div>
