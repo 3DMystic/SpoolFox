@@ -9,6 +9,7 @@
             "price": 22.99,
             "brand": "eSUN",
             "materialType": "PLA",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla"
@@ -21,7 +22,7 @@
             "price": 15.19,
             "brand": "Sunlu",
             "materialType": "PLA",
-            "spoolSize": 50,
+            "varient": "standard",
             "reviews": 4.4,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amazon.com/SUNLU-High-Speed-Filament-1-75mm/dp/B0CR17C24Y?tag=bingshoppinga-20&linkCode=df0&hvadid=80539416694511&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=88148&hvtargid=pla-4584138886130396&psc=1&msclkid=df2dc63793f114b564faae5a1be5a7b9"
@@ -49,6 +50,7 @@
             "price": 22.99,
             "brand": "Protopasta",
             "materialType": "PLA",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/epla"
@@ -62,6 +64,7 @@
             "price": 22.99,
             "brand": "Anycubic",
             "materialType": "PLA",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/pla-filament"
@@ -89,6 +92,7 @@
             "price": 28.00,
             "brand": "Hatchbox",
             "materialType": "PLA",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/pla-1-75mm"
@@ -201,6 +205,7 @@
             "price": 15.00,
             "brand": "eSUN",
             "materialType": "PETG",
+            "varient": "standard",
             "reviews": 4.8,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/products/petg"
@@ -214,6 +219,7 @@
             "price": 19.00,
             "brand": "AMOLEN",
             "materialType": "PETG",
+            "varient": "standard",
             "reviews": 4.6,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/petg-basic"
@@ -269,6 +275,7 @@
             "price": 26.00,
             "brand": "Hatchbox",
             "materialType": "PETG",
+            "varient": "standard",
             "reviews": 4.6,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/petg-1-75mm"
@@ -296,6 +303,7 @@
             "price": 16.99,
             "brand": "Anycubic",
             "materialType": "PETG",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/petg-filament"
@@ -310,6 +318,7 @@
             "price": 35.00,
             "brand": "eSUN",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/collections/flexible-series"
@@ -323,6 +332,7 @@
             "price": 35.00,
             "brand": "AMOLEN",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://www.amolen.com/products/tpu-basic"
@@ -336,6 +346,7 @@
             "price": 35.00,
             "brand": "eSUN",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://esun3dstore.com/collections/flexible-series"
@@ -377,6 +388,7 @@
             "price": 37.00,
             "brand": "Hatchbox",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/tpu-1-75mm"
@@ -390,6 +402,7 @@
             "price": 37.00,
             "brand": "Sunlu",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.7,
             "photo": "spool_img.webp",
             "purchaseLink": "https://www.hatchbox3d.com/collections/tpu-1-75mm"
@@ -403,6 +416,7 @@
             "price": 27.99,
             "brand": "Anycubic",
             "materialType": "TPU",
+            "varient": "standard",
             "reviews": 4.3,
             "photo": "/spool_img.webp",
             "purchaseLink": "https://store.anycubic.com/products/tpu-filament"

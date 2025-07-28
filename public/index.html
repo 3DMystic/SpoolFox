@@ -31,8 +31,8 @@
 
         <!--Search Bar-->
         <div class="search">
-            <input class="search-input" type="text" placeholder="Search...">
-            <button id="search-btn" type="submit" title="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <input class="search-input" type="search" placeholder="Search..." pattern="/[^a-zA-Z0-9\s]/" maxlength="11">
+            <button id="search-btn" type="submit" title="search-button" for="search"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
     </header>
 
@@ -41,7 +41,7 @@
     <!--Mobile/Quick Filter Options-->
     <div class="quick-filter-btns">
         <div class="filter">
-            <h2>Filter By:</h2>
+            <h2 id="quick-filter-h2">Filter By:</h2>
             <div class="quick-btn-container">
                 <button id="material-btn" class="quick-filter-btn" type="button" title="filter-button">Material</button>
                 <div class="material-btn-options hide">
@@ -69,19 +69,25 @@
             <form class="checkbox-filter">
                 <h2>Filter By:</h2> <!---Placeholer filters starts here-->
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="material" value="plastic"> Plastic</label>
-                    <label><input type="checkbox" name="material" value="metal"> Metal</label>
-                    <label><input type="checkbox" name="material" value="wood"> Wood</label>
+                    <h4>Material:</h4>
+                    <label><input class="checkbox" type="checkbox" name="material" value="plastic"> Plastic</label>
+                    <label><input class="checkbox" type="checkbox" name="material" value="metal"> Metal</label>
+                    <label><input class="checkbox" type="checkbox" name="material" value="wood"> Wood</label>
                 </div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="color" value="red"> Red</label>
-                    <label><input type="checkbox" name="color" value="blue"> Blue</label>
-                    <label><input type="checkbox" name="color" value="green"> Green</label>
+                    <h4>Color:</h4>
+                    <label><input class="checkbox" type="checkbox" name="color" value="red"> Red</label>
+                    <label><input class="checkbox" type="checkbox" name="color" value="blue"> Blue</label>
+                    <label><input class="checkbox" type="checkbox" name="color" value="green"> Green</label>
                 </div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="brand" value="brandA"> Brand A</label>
-                    <label><input type="checkbox" name="brand" value="brandB"> Brand B</label>
-                    <label><input type="checkbox" name="brand" value="brandC"> Brand C</label>
+                    <h4>Brand:</h4>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="AMOLEN"> AMOLEN</label>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="Anycubic"> Anycubic</label>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="eSUN"> eSUN</label>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="Hatchbox"> Hatchbox</label>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="Protopasta"> Protopasta</label>
+                    <label><input class="checkbox" type="checkbox" name="brand" value="Sunlu"> Sunlu</label>
                 </div> <!---Placeholer filters ends here-->
             </form>
         </div>
@@ -92,6 +98,7 @@
     <!--Bottom Bar-->
     <div class="bottom-bar">
         <div class="bottom-icons">
+            <a href="http://localhost:8080/"><i class="fa fa-home" aria-hidden="true"></i></a>
             <a href="#header"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
         </div>
     </div>

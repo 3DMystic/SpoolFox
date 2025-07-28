@@ -1,4 +1,3 @@
-
 const mainContent = document.querySelector('.main-content') || document.getElementById('main-content');
 
 // Function to fetch spools from the server
@@ -38,11 +37,12 @@ async function createSpoolCards() {
             const card = document.createElement('div');
             card.className = 'spool-card';
             card.innerHTML = `
-                <h3>${spool.name}</h3>
-                <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
-                <p>Color: ${spool.color}</p>
-                <p>Material: ${spool.material}</p>
-                <p>Weight: ${spool.weight}</p>
+                <h3>${spool.brand} ${spool.name}</h3>
+                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                <p>Diameter: ${spool.diameter}</p>
+                <p>${spool.weight} ${spool.material} SPOOL</p>
+                <p>Price: $${spool.price}</p>
+                <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
             `;
             mainContent.appendChild(card);
         });
@@ -73,31 +73,53 @@ searchBtn.addEventListener('click', () => {
 //search input validation and functionality
 const searchInput = document.querySelector('.search-input');
 
-searchInput.addEventListener('input', async (event) => {
-    const searchItem = event.target.value.toLowerCase();
+searchInput.addEventListener('input', async (input) => {
+    const searchItem = input.target.value.toLowerCase();
     const spools = await fetchSpools();
-    const filteredSpools = spools.filter(spool => 
+    const filteredSpools = spools.filter((spool) => 
         spool.name.toLowerCase().includes(searchItem) ||
-        spool.color.toLowerCase().includes(searchItem) ||
-        spool.material.toLowerCase().includes(searchItem) ||
-        spool.brand.toLowerCase().includes(searchItem)
+        spool.weight.toLowerCase().includes(searchItem) ||
+        spool.brand.toLowerCase().includes(searchItem) ||
+        spool.materialType.toLowerCase().includes(searchItem) ||
+        spool.varient.toLowerCase().includes(searchItem)
     );
+
+    const regex = /[^a-zA-Z0-9\s]/;
+
+    
+
     mainContent.innerHTML = '';
-    if (filteredSpools.length > 0) {
+    if (!regex.test(searchItem) && filteredSpools.length > 0) {
         filteredSpools.forEach(spool => {
             const card = document.createElement('div');
             card.className = 'spool-card';
             card.innerHTML = `
-                <h3>${spool.name}</h3>
-                <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
-                <p>Color: ${spool.color}</p>
-                <p>Material: ${spool.material}</p>
-                <p>Weight: ${spool.weight}</p>
+                <h3>${spool.brand} ${spool.name}</h3>
+                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/></a>
+                <p>Diameter: ${spool.diameter}</p>
+                <p>${spool.weight} ${spool.material} SPOOL</p>
+                <p>Price: $${spool.price}</p>
+                <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
             `;
             mainContent.appendChild(card);
         })
-    } else {
-        mainContent.innerHTML = '<p>No results found</p>';
+    } 
+    else if (regex.test(searchItem)) {
+        const alertContainer = document.createElement('div');
+        alertContainer.className = 'alert-container';
+        alertContainer.innerHTML = `
+            <p class="alert-text">No Special Characters Allowed!</p>
+        `;
+        mainContent.appendChild(alertContainer);
+    }
+    else {
+        const alertContainer = document.createElement('div');
+        alertContainer.className = 'alert-container';
+        alertContainer.innerHTML = `
+            <h3 class="alert-h3">Sorry!</h3>
+            <p class="alert-text">Search Not Found</p>
+        `;
+        mainContent.appendChild(alertContainer);
     }
 });
 
@@ -124,12 +146,13 @@ materialBtn.addEventListener('click', () => {
                     const card = document.createElement('div');
                     card.className = 'spool-card';
                     card.innerHTML = `
-                    <h3>${spool.name}</h3>
-                    <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
-                    <p>Color: ${spool.color}</p>
-                    <p>Material: ${spool.material}</p>
-                    <p>Weight: ${spool.weight}</p>
-                `;
+                        <h3>${spool.brand} ${spool.name}</h3>
+                        <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                        <p>Diameter: ${spool.diameter}</p>
+                        <p>${spool.weight} ${spool.material} SPOOL</p>
+                        <p>Price: $${spool.price}</p>
+                        <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
+                    `;
                 mainContent.appendChild(card);
                 })
             })
@@ -158,18 +181,53 @@ brandBtn.addEventListener('click', () => {
                     const card = document.createElement('div');
                     card.className = 'spool-card';
                     card.innerHTML = `
-                    <h3>${spool.name}</h3>
-                    <img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/>
-                    <p>Color: ${spool.color}</p>
-                    <p>Material: ${spool.material}</p>
-                    <p>Weight: ${spool.weight}</p>
-                `;
+                        <h3>${spool.brand} ${spool.name}</h3>
+                        <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                        <p>Diameter: ${spool.diameter}</p>
+                        <p>${spool.weight} ${spool.material} SPOOL</p>
+                        <p>Price: $${spool.price}</p>
+                        <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
+                    `;
                 mainContent.appendChild(card);
                 })
             })
         })
     };
 });
+
+//Desktop Filter
+const checkboxes = document.querySelectorAll('.checkbox')
+
+checkboxes.forEach(box => {
+    box.addEventListener('change', async () => {
+        const selectedBoxes = Array.from(checkboxes).filter(box => box.checked)
+        const spools = await fetchSpools();
+
+        let filteredSpools = spools;
+
+        selectedBoxes.forEach(selected => {
+            const name = selected.name;
+            const value = selected.value;
+            filteredSpools = filteredSpools.filter(spool => spool[name] === value);
+        });
+
+        mainContent.innerHTML = '';
+        filteredSpools.forEach(spool => {
+            const card = document.createElement('div');
+            card.className = 'spool-card';
+            card.innerHTML = `
+                <h3>${spool.brand} ${spool.name}</h3>
+                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                <p>Diameter: ${spool.diameter}</p>
+                <p>${spool.weight} ${spool.material} SPOOL</p>
+                <p>Price: $${spool.price}</p>
+                <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
+            `;
+            mainContent.appendChild(card);
+        })
+        
+    })
+})
 
 //hide dropdowns and search bar
 const hideBoxes = document.querySelectorAll('.hide');
@@ -181,3 +239,11 @@ document.addEventListener('mouseup', (event) => {
         }
     })
 })
+
+/*let filteredSpools = spools;
+
+        selectedBoxes.forEach(selected => {
+            const name = selected.name;
+            const value = selected.value;
+            filteredSpools = filteredSpools.filter(spool => spool[name] === value);
+        });*/
