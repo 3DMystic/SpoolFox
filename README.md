@@ -25,19 +25,15 @@ To run this project, you will need to go to your terminal:
 
 1. git clone https://github.com/3DMystic/SpoolFox.git
 
-2. npm init
-
-3. npm install express --save
-
-4. For this step I prefer to go to my package.json file and in the "scripts" object, change "start" to "dev" and change its value to "node --watch server.js". This will allow you to make your own changes and simply refresh the page to see any changes you made.
+2. For this step I prefer to go to my package.json file and in the "scripts" object, change "start" to "dev" and change its value to "node --watch server.js". This will allow you to make your own changes and simply refresh the page to see any changes you made.
     Once this is done, it should look like this -
     ![](./code-snapshot.png)
 
   If you choose not to make any changes to the package.json file you can skip to the next step.
 
-5. change directory to were you are in SpoolFox-capstone-2025/api
+3. change directory to were you are in SpoolFox-capstone-2025/api
 
-6. npm run dev or npm server.js (only if you skipped step 4).
+4. npm run dev or npm server.js (only if you skipped step 4).
 
   Once you are running you can go to http://localhost:8080/ to see the page live or http://localhost:8080/api/filamentSpools for a full list of current filament spool data
   that I used to display the front-end.

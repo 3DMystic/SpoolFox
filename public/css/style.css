@@ -29,10 +29,12 @@ i {
 h3 {
     margin: 3px auto;
     padding-top: 2px;
+    font-weight: bold;
 }
 
 p {
     margin: 3px auto;
+    font-size: 16px;
 }
 
 /* Menu styles */
@@ -131,11 +133,8 @@ p {
     font-weight: bold;
 }
 
-#material-btn {
-    background-color: #7db1b1;
-}
-
-#brand-btn{
+#material-btn,
+#brand-btn {
     background-color: #7db1b1;
 }
 
@@ -184,6 +183,12 @@ p {
     height: 100%;
 }
 
+.desktopFilter-and-mainContent {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+    }
+
 .desktop-filter {
     display: none;
 }
@@ -194,7 +199,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     width: 100%;
-    margin: 10px;
+    margin: 5px auto;
     padding-bottom: 3rem;
 }
 
@@ -262,17 +267,57 @@ p {
     height: 100%;
 }
 
+/* Footer */
+footer h4 {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 5px auto;
+}
+
+footer p {
+    margin: 1rem auto;
+}
+
+footer {
+    background-color: #507092;
+    color: #ffffff;
+    margin-bottom: 3rem;
+}
+
+/* About and Contact section */
+.about,
+.contact {
+    text-align: center;
+    padding: 15px 10px;
+
+}
+
+.contact {
+    background-color: #202020;
+}
+
+.github i,
+.linked-in i {
+    margin: auto 5px;
+    font-size: 2rem;
+}
+
 
 /*Tablets*/
 @media (min-width: 480px) {
     .main-content {
         grid-template-columns: repeat(3, 1fr);
-        margin: 20px 15px;
+        margin: 20px 5px;
     }
 
     .spool-card {
         max-width: 12rem;
         max-height: 25rem;
+    }
+
+    .contact {
+        
     }
 }
 
@@ -280,11 +325,6 @@ p {
 @media (min-width: 769px) {
     .quick-filter-btns {
         display: none;
-    }
-
-    .desktopFilter-and-mainContent {
-        display: flex;
-        flex-direction: row;
     }
 
     .desktop-filter h2 {
@@ -330,6 +370,34 @@ p {
     .bottom-bar {
         display: none;
     }
+
+    footer {
+        margin-bottom: 0rem;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+    }
+    
+    .about p {
+        width: 90%;
+    }
+    
+    .contact {
+        height: 5rem;
+    }
+
+    .contact h4 {
+        margin-bottom: 1rem;
+    }
+    .contact p {
+        display: inline;
+        margin: 1rem 1rem;
+    }
 }
 
 /*Desktops and Large screens*/
@@ -355,6 +423,10 @@ p {
         min-width: 340px;
 
     }
+
+    .about p {
+        width: 80%;
+    }
 }
 
 /*Extra large screens and TVs*/
@@ -369,4 +441,7 @@ p {
         margin: 1rem 1rem 1vh 1rem;
     }
 
+    .about p {
+        width: 75%;
+    }
 }
