@@ -38,9 +38,9 @@ async function createSpoolCards() {
             card.className = 'spool-card';
             card.innerHTML = `
                 <h3>${spool.brand} ${spool.name}</h3>
-                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                <a href="${spool.purchaseLink}" target="_blank"><img src="${spool.photo || '/spool_img.webp'}" alt="photo of a filament spool" class="spool-img"/></a>
                 <p>Diameter: ${spool.diameter}</p>
-                <p>${spool.weight} ${spool.material} SPOOL</p>
+                <p>${spool.weight} SPOOL</p>
                 <p>Price: $${spool.price}</p>
                 <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
             `;
@@ -86,8 +86,6 @@ searchInput.addEventListener('input', async (input) => {
 
     const regex = /[^a-zA-Z0-9\s]/;
 
-    
-
     mainContent.innerHTML = '';
     if (!regex.test(searchItem) && filteredSpools.length > 0) {
         filteredSpools.forEach(spool => {
@@ -95,9 +93,9 @@ searchInput.addEventListener('input', async (input) => {
             card.className = 'spool-card';
             card.innerHTML = `
                 <h3>${spool.brand} ${spool.name}</h3>
-                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/></a>
+                <a href="${spool.purchaseLink}" target="_blank"><img src="${spool.photo || '/spool_img.webp'}" alt="photo of a filament spool" class="spool-img"/></a>
                 <p>Diameter: ${spool.diameter}</p>
-                <p>${spool.weight} ${spool.material} SPOOL</p>
+                <p>${spool.weight} SPOOL</p>
                 <p>Price: $${spool.price}</p>
                 <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
             `;
@@ -147,9 +145,9 @@ materialBtn.addEventListener('click', () => {
                     card.className = 'spool-card';
                     card.innerHTML = `
                         <h3>${spool.brand} ${spool.name}</h3>
-                        <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                        <a href="${spool.purchaseLink}" target="_blank"><img src="${spool.photo || '/spool_img.webp'}" alt="photo of a filament spool" class="spool-img"/></a>
                         <p>Diameter: ${spool.diameter}</p>
-                        <p>${spool.weight} ${spool.material} SPOOL</p>
+                        <p>${spool.weight} SPOOL</p>
                         <p>Price: $${spool.price}</p>
                         <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
                     `;
@@ -182,9 +180,9 @@ brandBtn.addEventListener('click', () => {
                     card.className = 'spool-card';
                     card.innerHTML = `
                         <h3>${spool.brand} ${spool.name}</h3>
-                        <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                        <a href="${spool.purchaseLink}" target="_blank"><img src="${spool.photo || '/spool_img.webp'}" alt="photo of a filament spool" class="spool-img"/></a>
                         <p>Diameter: ${spool.diameter}</p>
-                        <p>${spool.weight} ${spool.material} SPOOL</p>
+                        <p>${spool.weight} SPOOL</p>
                         <p>Price: $${spool.price}</p>
                         <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
                     `;
@@ -196,38 +194,42 @@ brandBtn.addEventListener('click', () => {
 });
 
 //Desktop Filter
-const checkboxes = document.querySelectorAll('.checkbox')
 
-checkboxes.forEach(box => {
-    box.addEventListener('change', async () => {
-        const selectedBoxes = Array.from(checkboxes).filter(box => box.checked)
+const allCheckboxes = document.querySelectorAll('[type="checkbox"]');
+
+allCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', async () => {
         const spools = await fetchSpools();
 
-        let filteredSpools = spools;
-
-        selectedBoxes.forEach(selected => {
-            const name = selected.name;
-            const value = selected.value;
-            filteredSpools = filteredSpools.filter(spool => spool[name] === value);
-        });
+        const selected = [...allCheckboxes].filter(box => box.checked).map(box => box.value.toLowerCase());
 
         mainContent.innerHTML = '';
-        filteredSpools.forEach(spool => {
-            const card = document.createElement('div');
-            card.className = 'spool-card';
-            card.innerHTML = `
-                <h3>${spool.brand} ${spool.name}</h3>
-                <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
-                <p>Diameter: ${spool.diameter}</p>
-                <p>${spool.weight} ${spool.material} SPOOL</p>
-                <p>Price: $${spool.price}</p>
-                <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
-            `;
-            mainContent.appendChild(card);
-        })
-        
-    })
-})
+
+        if (selected.length > 0) {
+            const filteredSpools = spools.filter(spool => 
+                selected.some(key => Object.values(spool)
+                .map(value => String(value).toLowerCase()).includes(key))); 
+            
+            filteredSpools.forEach(spool => {
+                const card = document.createElement('div');
+                card.className = 'spool-card';
+                card.innerHTML = `
+                    <h3>${spool.brand} ${spool.name}</h3>
+                    <a href="${spool.purchaseLink}" target="_blank"><img src=${spool.photo} alt="photo of a filament spool" class="spool-img"/><a/>
+                    <p>Diameter: ${spool.diameter}</p>
+                    <p>${spool.weight} SPOOL</p>
+                    <p>Price: $${spool.price}</p>
+                    <p>${spool.reviews} <i id="review-star" class="fa fa-star"></i></p>
+                `;
+            mainContent.appendChild(card); 
+            });
+        } else {
+            
+            createSpoolCards();
+        }
+    });
+});
+
 
 //hide dropdowns and search bar
 const hideBoxes = document.querySelectorAll('.hide');
@@ -239,11 +241,3 @@ document.addEventListener('mouseup', (event) => {
         }
     })
 })
-
-/*let filteredSpools = spools;
-
-        selectedBoxes.forEach(selected => {
-            const name = selected.name;
-            const value = selected.value;
-            filteredSpools = filteredSpools.filter(spool => spool[name] === value);
-        });*/
