@@ -200,15 +200,15 @@ const allCheckboxes = document.querySelectorAll('[type="checkbox"]');
 allCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener('change', async () => {
         const spools = await fetchSpools();
-
+        //AI helped on the line below, I had most of the logic but did not think of the spread operator
         const selected = [...allCheckboxes].filter(box => box.checked).map(box => box.value.toLowerCase());
 
         mainContent.innerHTML = '';
 
         if (selected.length > 0) {
             const filteredSpools = spools.filter(spool => 
-                selected.some(key => Object.values(spool)
-                .map(value => String(value).toLowerCase()).includes(key))); 
+                selected.some(key => Object.values(spool) // AI helped here, struggled with several attempts and researched many ways to do this with no success
+                    .map(value => String(value).toLowerCase()).includes(key))); 
             
             filteredSpools.forEach(spool => {
                 const card = document.createElement('div');
